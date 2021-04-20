@@ -1,5 +1,4 @@
 import position
-import player
 import automaticPlayer
 import humanPlayer
 import boardImage
@@ -27,6 +26,32 @@ class Board:
 			for x in range(3):
 				column.append(position.Position())
 			self.positions.append(column)
+
+	def setPositionOccupant(self, line, column, playerSymbol):
+		if playerSymbol==0:
+			self.positions[line-1][column-1].setOccupant(None)
+		if playerSymbol==1:
+			self.positions[line-1][column-1].setOccupant(self.player1)
+		if playerSymbol==2:
+			self.positions[line-1][column-1].setOccupant(self.player2)
+
+	def setPlayerStatus(self, enabled_player, strategy, move_order, strategy_way):
+		if enabled_player==1:
+			self.player1.enable(boardImage.BoardImage())
+			if self.matchStatus == 4:
+				self.player1.setWinner()
+		if enabled_player==2:
+			self.player2.enable(boardImage.BoardImage())
+			if self.matchStatus == 4:
+				self.player2.setWinner()
+		if strategy!=0:
+			self.player2.restore_strategy(strategy, move_order, strategy_way)
+
+	def get_player(self, number):
+		if number == 1:
+			return self.player1
+		else:
+			return self.player2
 
 	def getStatus(self):
 		return self.matchStatus
@@ -206,6 +231,3 @@ class Board:
 			else:
 				if (self.getStatus()==4 or self.getStatus()==5):
 					self.reset()
-		
-#-----------------------------------------------------------------------------------------------------------------------------------
-					

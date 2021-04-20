@@ -1,11 +1,12 @@
-import strategy 
+import strategy
 import move
-import automaticPlayer
-import boardImage
 
 class Strategy1(strategy.Strategy):
 	def __init__(self):
 		super().__init__()
+
+	def get_strategy_number(self):
+		return 1
 
 	def getMove1(self, state):
 		self.moveOrder+=1
@@ -82,6 +83,3 @@ class Strategy1(strategy.Strategy):
 				else:
 					myMove = self.getBasicMove(state)		
 		return myMove
-	 
-
- 

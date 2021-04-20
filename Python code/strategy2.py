@@ -1,11 +1,12 @@
 import strategy
 import move
-import automaticPlayer
-import boardImage
 
 class Strategy2(strategy.Strategy):
 	def __init__(self):
 		super().__init__()
+
+	def get_strategy_number(self):
+		return 2
 	
 	def getFirstMove(self):
 		return move.Move(2, 2)

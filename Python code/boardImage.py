@@ -12,6 +12,9 @@ class BoardImage:
 	def getMessage(self):
 		return self.message
 	 
+	def getMap(self):
+		return self.map
+	 
 	def getValue(self, line, column):
 		return self.map[(line-1)][(column-1)]
 	 

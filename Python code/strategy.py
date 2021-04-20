@@ -1,24 +1,27 @@
-#import abc
 import move
-import automaticPlayer
-import boardImage
 
-#class Strategy(metaclass=abc.ABCMeta):
 class Strategy():
 	def __init__(self):
 		super().__init__()
 		self.moveOrder=0
 		self.strategyWay=0
 
-	#@abstractmethod
+	def restoreData(self, arg_move_order, arg_strategy_way):
+		self.moveOrder=arg_move_order
+		self.strategyWay=arg_strategy_way	
+
+	def get_move_order(self):
+		return self.moveOrder
+	 
+	def get_strategy_way(self):
+		return self.strategyWay
+	 
 	def defineMove(self, state):
 		pass
 	 
-	#@abstractmethod
 	def getMove1(self, state):
 		pass
 	 
-	#@abstractmethod
 	def getMove2(self, state):
 		pass
 
@@ -192,4 +195,3 @@ class Strategy():
 
 	def move3(self, state):
 		return self.getBasicMove(state)
-
