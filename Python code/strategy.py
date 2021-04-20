@@ -6,14 +6,14 @@ class Strategy():
 		self.moveOrder=0
 		self.strategyWay=0
 
-	def restoreData(self, arg_move_order, arg_strategy_way):
+	def restoreData(self, arg_move_order, arg_strategy_way):	# object recovery
 		self.moveOrder=arg_move_order
 		self.strategyWay=arg_strategy_way	
 
-	def get_move_order(self):
+	def get_move_order(self):	# object recovery
 		return self.moveOrder
 	 
-	def get_strategy_way(self):
+	def get_strategy_way(self):	# object recovery
 		return self.strategyWay
 	 
 	def defineMove(self, state):

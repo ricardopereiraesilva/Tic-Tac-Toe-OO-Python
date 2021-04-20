@@ -27,7 +27,7 @@ class Board:
 				column.append(position.Position())
 			self.positions.append(column)
 
-	def setPositionOccupant(self, line, column, playerSymbol):
+	def setPositionOccupant(self, line, column, playerSymbol):	# object recovery
 		if playerSymbol==0:
 			self.positions[line-1][column-1].setOccupant(None)
 		if playerSymbol==1:
@@ -35,7 +35,7 @@ class Board:
 		if playerSymbol==2:
 			self.positions[line-1][column-1].setOccupant(self.player2)
 
-	def setPlayerStatus(self, enabled_player, strategy, move_order, strategy_way):
+	def setPlayerStatus(self, enabled_player, strategy, move_order, strategy_way):	# object recovery
 		if enabled_player==1:
 			self.player1.enable(boardImage.BoardImage())
 			if self.matchStatus == 4:
@@ -47,7 +47,7 @@ class Board:
 		if strategy!=0:
 			self.player2.restore_strategy(strategy, move_order, strategy_way)
 
-	def get_player(self, number):
+	def get_player(self, number):	# object recovery
 		if number == 1:
 			return self.player1
 		else:

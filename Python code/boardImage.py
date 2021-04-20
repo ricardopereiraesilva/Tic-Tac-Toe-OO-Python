@@ -12,7 +12,7 @@ class BoardImage:
 	def getMessage(self):
 		return self.message
 	 
-	def getMap(self):
+	def getMap(self):	# object recovery
 		return self.map
 	 
 	def getValue(self, line, column):
